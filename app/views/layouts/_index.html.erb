@@ -14,13 +14,13 @@
       <h2>Ruby on Rails スケジュール管理アプリ</h2>
     </header>
     <div class = alert>
-      <% flash.each do |message_type,message| %>
+      <% flash.each do |message_type, message| %>
         <%= message %>
       <% end %>
     </div>
     <%=yield%>
     <footer>
-      <h2>現在の日時：<%=Date.today.strftime("%Y年%m月%d日")%></h2>
+      <h2>現在の日時：<%=Date.today.strftime("%Y年%m月%d日")%>  スケジュール合計：<%= Post.all.count %></h2> 
     </footer>
   </body>
 </html>
