@@ -1,0 +1,33 @@
+<p>スケジュール編集</p>
+<%= form_with(model: @post,local: true,) do |f| %>
+  <%= render "shared/error_message"%>
+  <table>
+    <tr>
+    <th><%= f.label :タイトル %></th>
+    <td> <%= f.text_field :title %></td>
+    </tr>
+    
+    <tr>
+    <th><%= f.label :開始日 %></th>
+    <td><%= f.date_field :start_day %></td>
+    </tr>
+    
+    <tr>
+    <th><%= f.label :終了日 %></th>
+    <td><%= f.date_field :end_day %></td>
+    </tr>
+
+    <tr>
+    <th><%= f.label :終日 %></th>
+    <td><%= f.check_box :allday %>
+    <span>終日の場合はチェックを入れます</span></td>
+    </tr>
+
+    <tr>
+    <th><%= f.label :スケジュールメモ %></th>
+    <td><%= f.text_area :memo %></td>
+    </tr>
+  </table>
+  <%= f.submit "スケジュールの編集を完了する", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "スケジュール一覧", "/posts" %>
